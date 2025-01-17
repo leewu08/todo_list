@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 # MySQL 연결 설정
 db_config = {
-    'host': 'localhost',
+    'host': '10.0.66.32',
     'user': 'sejong',
     'password': '1234',
     'database': 'todo_db'
@@ -57,7 +57,6 @@ def add_todo():
         cursor = conn.cursor()
         cursor.execute("INSERT INTO todos (title, due_date) VALUES (%s, %s)", (title, due_date))
         conn.commit()
-        todo_id = cursor.lastrowid
         
         return jsonify({
             'id': todo_id,

@@ -1,0 +1,4 @@
+# Gitignore for Python project 
+/venv/__pycache__/
+venv/
+venv1/
